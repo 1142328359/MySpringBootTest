@@ -15,6 +15,8 @@ import com.ytit.xyx.MySpringBootTest.doman.Course;
 public interface CourseDao {
 
 	//课程名模糊查询
+	//CONCAT(CONCAT('%', #{content}),'%')
+	//concat函数就是SQL语句的拼接函数
 	@Select("select * from k_course where cname like CONCAT('%', #{content},'%')")
 	ArrayList<Course> selectByString(String content);
 	
